@@ -1,3 +1,12 @@
+/**
+ * @file script.js
+ * @description Lógica interna del mapa interactivo y coordenadas.
+ * @author Kit Guadarrama
+ * @date Julio 2026
+ */
+
+console.log("Mapa cargado correctamente.");
+
 $(document).ready(function () {
     // Asegurarnos de que las etiquetas hover y las ventanas estén ocultas al inicio
     $('.edificio, .ventana').hide();
