@@ -173,7 +173,7 @@ p, li, a, span, button, td, th, label, input, select, textarea, .instrucciones {
     cursor: pointer;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
     animation: pulso 2s infinite;
 }
 
@@ -464,4 +464,21 @@ p, li, a, span, button, td, th, label, input, select, textarea, .instrucciones {
 #tx_sepi {
     top: 19%;
     left: 14%;
+}
+
+/* Estilos para sublista de UDI */
+.sub-area-list {
+    margin: 6px 0 0 0 !important;
+    padding-left: 14px !important;
+}
+
+.sub-area-list li {
+    font-size: 0.82rem !important;
+    margin-bottom: 4px !important;
+    color: #555555 !important;
+}
+
+.sub-area-list li::before {
+    content: "▫" !important;
+    color: #009A44 !important; /* Verde UPIICSA para sub-áreas */
 }
