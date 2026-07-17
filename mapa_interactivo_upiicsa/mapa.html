@@ -1,0 +1,498 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa Interactivo UPIICSA</title>
+    <!-- Google Fonts para tipografía premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Aquí enlazamos el archivo de los estilos -->
+    <link type="text/css" rel="stylesheet" href="estilacho.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <h1 id="titulin">MAPA INTERACTIVO <span>UPIICSA</span></h1>
+            <p class="instrucciones">
+                <span class="badge">Instrucciones</span> Explora los edificios haciendo clic en el mapa.
+            </p>
+        </header>
+
+        <div class="dashboard-layout">
+            <!-- Panel lateral izquierdo de información -->
+            <aside class="sidebar-info">
+                <div class="sidebar-placeholder">
+                    <div class="placeholder-icon">🏫</div>
+                    <h3>Directorio de Edificios</h3>
+                    <p>Haz clic en los botones del mapa para ver los detalles, laboratorios, jefaturas y academias de cada edificio.</p>
+                </div>
+
+                <!-- Ventanas grandes de información que aparecen al hacer clic -->
+                <div class="ventana" id="info_ligeros">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Ligeros</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Almacén de Física</li>
+                                <li>Laboratorios del 1 al 6</li>
+                                <li>Sala de preparación de Física</li>
+                                <li>Cubículos 1 al 6</li>
+                                <li>Sala de preparación</li>
+                                <li>Taller de Mantenimiento</li>
+                                <li>Taller de Vidrío</li>
+                                <li>Almacén de Química</li>
+                                <li>Sala de preparación de Química</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Jefatura del Laboratorio de Física</li>
+                                <li>Laboratorios del 7 al 12</li>
+                                <li>Sala de preparación de Física</li>
+                                <li>Cubículos del 7 al 12</li>
+                                <li>Sala de preparación</li>
+                                <li>Sala Investigación Docente</li>
+                                <li><strong>Lab. de Cómputo</strong></li>
+                                <li>Sala Modelo</li>
+                                <li>Sala de Laboratorio</li>
+                                <li>Jefatura de Laboratorio de Química</li>
+                                <li>Sala de Laboratorio de Química</li>
+                                <li>Sala de preparación de Química</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_basica">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Formación Básica</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Departamento de Formación Básica</li>
+                                <li>Coordinación de Plan de Acción Tutorial (Tutorías)</li>
+                                <li>Servicio Médico</li>
+                                <li>Centro de Apoyo a Estudiantes</li>
+                                <li>Oficina de Electivas</li>
+                                <li>Prefectura del Orden</li>
+                                <li>Academia de Humanidades y Ciencias Sociales</li>
+                                <li><strong>Salones del 1 al 5</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Academia de Matemáticas</li>
+                                <li><strong>Lab. de Cómputo</strong></li>
+                                <li><strong>Salones 101 al 112</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Segundo Piso</h3>
+                            <ul>
+                                <li>Academia de Química</li>
+                                <li><strong>Salones del 201 al 212</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Tercer Piso</h3>
+                            <ul>
+                                <li>Academia de Física</li>
+                                <li><strong>Salones del 201 al 312</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_sociales">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Estudios Profesionales Genéricos</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Departamento de Estudios Profesional Genéricos</li>
+                                <li>Red de Genero</li>
+                                <li>Centro de Apoyo a Estudiantes</li>
+                                <li>Servicio Médico</li>
+                                <li>Soporte Técnico</li>
+                                <li>Protección Civil</li>
+                                <li>Academia de Economía</li>
+                                <li><strong>Salones del 1 al 12</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Academia de Mercadotecnia y Recursos Humanos</li>
+                                <li>Academia de Derecho</li>
+                                <li><strong>Salones 101 al 114</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Segundo Piso</h3>
+                            <ul>
+                                <li>Academia de Tecnología en Informática</li>
+                                <li><strong>Lab. de Cómputo 1</strong></li>
+                                <li><strong>Lab. de Cómputo 2</strong></li>
+                                <li>Academia de Administración</li>
+                                <li><strong>Salones del 201 al 210</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Tercer Piso</h3>
+                            <ul>
+                                <li>Academia de Finanzas</li>
+                                <li><strong>Salones del 301 al 321</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_gobierno">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Gobierno</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Subdirección de Servicios Educativos e Integración Social</li>
+                                <li>Gestión Escolar</li>
+                                <li>Cajero Bancomer</li>
+                                <li>Servicio Medico</li>
+                                <li>Servicio Dental</li>
+                                <li>Subdirección Administrativa</li>
+                                <li>Capital Humano</li>
+                                <li>Pagaduría</li>
+                                <li>Recursos Financieros</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Dirección</li>
+                                <li>SEGET</li>
+                                <li>Relaciones Publicas y Desarrollo Social</li>
+                                <li>Activo Fijo</li>
+                                <li>Asesoría Jurídica</li>
+                                <li>Diseño y Comunicación Digital</li>
+                                <li>Oficina de Apoyo Logístico al Consejo Técnico Consultivo Escolar</li>
+                                <li>Jefatura Sección de Estudios de Postgrado e Investigación</li>
+                                <li>Sala de Consejo</li>
+                                <li>Orientación Juvenil</li>
+                                <li>Recursos Materiales</li>
+                                <li>Sindicato PAEE</li>
+                                <li>Departamento de Extensión y Apoyos Educativos</li>
+                                <li>Sindicato Docente</li>
+                                <li>Subdirección Académica</li>
+                                <li>Comité de Seguridad Contra la Violencia</li>
+                                <li>Departamento de Innovación Educativa</li>
+                                <li>Sala de Junta de Subdirección Académica</li>
+                                <li>Oficina de Practicas y Vistas Escolares</li>
+                                <li>Departamento de Evaluación y Seguimiento</li>
+                                <li>Jefatura del Programa Académico de Ingeniería Industrial</li>
+                                <li>Jefatura del Programa Académico de la Licenciatura en Administración Industrial</li>
+                                <li>Jefatura del Programa Académico de Ingeniería en Transporte</li>
+                                <li>Jefatura del Programa Académico de la Licenciatura en Ciencias de la Informática</li>
+                                <li>Jefatura del Programa Académico de Ingeniería en Informática</li>
+                                <li>Coordinación de Enlace y Gestión Técnica</li>
+                                <li>Sistema de Gestión para Organizaciones Educativas</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Sótano</h3>
+                            <ul>
+                                <li>Bienes en Custodia</li>
+                                <li>Editorial</li>
+                                <li>Almacén de Activo Fijo</li>
+                                <li>Oficina de Intendencia</li>
+                                <li>Mensajería</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_ingenieria">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Desarrollo Profesional Específico</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Departamento de Desarrollo Profesional Especifico</li>
+                                <li>Seminarios de Actualización con Opción a Titulación</li>
+                                <li>Centro de Capacitación y Desarrollo de Personal</li>
+                                <li>Lab. Robótica</li>
+                                <li>Centro de Apoyo a Estudiantes</li>
+                                <li>Servicio Médico</li>
+                                <li>Jardinería</li>
+                                <li><strong>Lab. de Cómputo Diseño 1</strong></li>
+                                <li><strong>Lab. de Cómputo Diseño 2</strong></li>
+                                <li>Fomento a la Cultura</li>
+                                <li>Academia de Producción</li>
+                                <li><strong>Salones del 1 al 7</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Academia de Informática</li>
+                                <li>Academia de Ingeniería Industrial</li>
+                                <li><strong>Salones 101 al 118</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Segundo Piso</h3>
+                            <ul>
+                                <li>Academia de Transporte</li>
+                                <li><strong>Lab. de Cómputo de Sistemas de Transporte</strong></li>
+                                <li>Academia de Ciencias Básicas de la Ingeniería</li>
+                                <li><strong>Salones del 201 al 218</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Tercer Piso</h3>
+                            <ul>
+                                <li>Academia de Investigación de Operaciones</li>
+                                <li><strong>Lab. de Cómputo Poniente</strong></li>
+                                <li><strong>Lab. de Cómputo Oriente</strong></li>
+                                <li>Academia de Computación</li>
+                                <li><strong>Salones del 301 al 310</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_pesados">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Competencias Integrales e Institucionales</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Departamento de Mantenimiento y Servicios</li>
+                                <li>Carpintería</li>
+                                <li><strong>Lab. de Cómputo de Realidad Virtual</strong></li>
+                                <li>Lab. de Ingeniería Ferroviaria</li>
+                                <li>Lab. de Metrología</li>
+                                <li>Lab. de Metalografía</li>
+                                <li>Maquinados Industriales</li>
+                                <li>Soldadura Eléctrica</li>
+                                <li><strong>Lab. Cómputo Robótica 1</strong></li>
+                                <li><strong>Lab. Cómputo Robótica 2</strong></li>
+                                <li>Servicio Médico</li>
+                                <li>Lab. de Condiciones Ambientales</li>
+                                <li>Lab. de Ingeniería de Métodos</li>
+                                <li><strong>Salones 1 al 3 de Ingeniería de Métodos</strong></li>
+                                <li>Control Escolar SEPI</li>
+                                <li><strong>Lab. de Cómputo de Electricidad y Control</strong></li>
+                                <li><strong>Salones de 1 al 4 de Electricidad y Control</strong></li>
+                                <li>Almacén de Electricidad y Control</li>
+                                <li>Lab. de Manufactura</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Jefatura de Competencias Integrales e Institucionales</li>
+                                <li>Cubículos A1 a A28</li>
+                                <li>Cubículos B1 a A40</li>
+                                <li>Jefatura de las Academias de Laboratorios de Procesos de Manufactura</li>
+                                <li>Jefatura de las Academias de Laboratorios de Electricidad y Control</li>
+                                <li>Jefatura de las Academias de Laboratorios de Control de Calidad</li>
+                                <li>Jefatura de las Academias de Laboratorios de Ingeniería de Métodos</li>
+                                <li>Jefatura de las Academias de Laboratorios en Sistemas Automotrices</li>
+                                <li>Jefatura de las Academias de Laboratorios de Automatización y Robótica</li>
+                                <li>Unidad Politécnica de Integración Social (UPIS)</li>
+                                <li>Diplomados y Cursos</li>
+                                <li>Club de Robótica</li>
+                                <li><strong>Salones 1 al 2 de ISISA</strong></li>
+                                <li><strong>Salones 1 al 10</strong></li>
+                                <li><strong>Salón UPIS</strong></li>
+                                <li>Oficina de Titulación</li>
+                                <li>Departamento de Evaluación y Seguimiento Académico</li>
+                                <li>Oficina Decanato</li>
+                                <li><strong>Lab. de Cómputo MakerSpace</strong></li>
+                                <li><strong>Lab. de Cómputo Cisco</strong></li>
+                                <li><strong>Lab. de Cómputo SUN</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_culturales">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Actividades Culturales</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Auditorio Generalísimo Morelos</li>
+                                <li>Auditorio Víctor Bravo Ahuja</li>
+                                <li>Biblioteca Ing. Manuel Zorrilla Carcaño</li>
+                                <li><strong>Lab. de Cómputo de Biblioteca</strong></li>
+                                <li>Centro de Apoyos para Estudiantes</li>
+                                <li>Cafetería</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li><strong>Unidad de Informática</strong></li>
+                                <li><strong>Lab. de Cómputo UDI de la 1 a la 4</strong></li>
+                                <li>Cursos Extracurriculares de Lenguas Extranjeras (Celex)</li>
+                                <li><strong>Lab. de Cómputo Docente</strong></li>
+                                <li>Nodo UPIICSA</li>
+                                <li><strong>Salones C0 al C14</strong></li>
+                                <li><strong>Salones SEPI 1 al 8</strong></li>
+                                <li>Programa de Doctorado en Gestión y Políticas de Innovación (DGPI)</li>
+                                <li>Grupo de Investigación en Cooperativismo y Organizaciones de la Economía Social y Solidaría (GICOPS)</li>
+                                <li>Unidad de Tecnología Educativa y Campus Virtual (UTEyCV)</li>
+                                <li><strong>Lab. de Cómputo de Redes</strong></li>
+                                <li>Lab. de IoT</li>
+                                <li>Lab. de Experiencias</li>
+                                <li>Lab. de Programación</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Sótano</h3>
+                            <ul>
+                                <li>Sala de Lectura de Biblioteca</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_gimnasio">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Gimnasio</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Jefatura de Actividades Deportivas</li>
+                                <li>Comunicación Deportiva</li>
+                                <li>Vestidores de Hombres</li>
+                                <li>Servicio Médico</li>
+                                <li>Vestidores de Mujeres</li>
+                                <li>Sala Multiartística</li>
+                                <li>Sala de Trofeos</li>
+                                <li>Sala de Pesas</li>
+                                <li>Cuadrilátero de Boxeo</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Sala de Cardio</li>
+                                <li><strong>Salón usos Múltiples</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_espejos">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de los Espejos</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li><strong>Salón de los Espejos</strong></li>
+                                <li><strong>Planta Purificadora</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventana" id="info_sepi">
+                    <span class="btn-cerrar">&times;</span>
+                    <p class="nom_edificio">Edificio de Sección de Estudios de Posgrado e Investigación (SEPI)</p>
+                    <div class="pisos-container">
+                        <div class="piso-columna">
+                            <h3>Planta Baja</h3>
+                            <ul>
+                                <li>Auditorio</li>
+                                <li>Biblioteca de Graduados</li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Primer Piso</h3>
+                            <ul>
+                                <li>Jefatura de la Sección de Estudios de Posgrado e Investigación</li>
+                                <li>Departamento de Investigación</li>
+                                <li>Departamento de Posgrado</li>
+                                <li>Maestría en Ingeniería Industrial</li>
+                                <li>Maestría en Informática</li>
+                                <li>Maestría en administración</li>
+                                <li>Maestría en Ciencias en Estudios Interdisciplinarios para PYME</li>
+                                <li>Doctorado en Gestión y en Política de Innovación</li>
+                                <li><strong>Salón de Profesores</strong></li>
+                                <li><strong>Lab. de Cómputo de CEFE</strong></li>
+                                <li><strong>Lab. de Cómputo de SEPI</strong></li>
+                            </ul>
+                        </div>
+                        <div class="piso-columna">
+                            <h3>Segundo Piso</h3>
+                            <ul>
+                                <li>Sala de Consejo</li>
+                                <li>Sala de Profesores</li>
+                                <li>Aula Siglo XXI</li>
+                                <li><strong>Lab. de Cómputo de UPIS 1</strong></li>
+                                <li><strong>Lab. de Cómputo de UPIS 2</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- El mapa interactivo -->
+            <div id="contenedor">
+                <!-- El mapa de fondo -->
+                <img src="img-mapa/image.png" id="mapa" alt="mapa">
+
+                <!-- Botones y textos cortos que aparecen al pasar el mouse (Hover) -->
+                <div class="botoncito" id="btn_sepi"></div>
+                <div class="edificio" id="tx_sepi">Edificio de Sección de Estudios de Posgrado e Investigación (SEPI)</div>
+
+                <div class="botoncito" id="btn_ligeros"></div>
+                <div class="edificio" id="tx_ligeros">Edificio de Ligeros</div>
+
+                <div class="botoncito" id="btn_basica"></div>
+                <div class="edificio" id="tx_basica">Edificio de Formación Básica</div>
+
+                <div class="botoncito" id="btn_sociales"></div>
+                <div class="edificio" id="tx_sociales">Edificio de Estudios Profesional Genéricos</div>
+
+                <div class="botoncito" id="btn_gobierno"></div>
+                <div class="edificio" id="tx_gobierno">Edificio de Gobierno</div>
+
+                <div class="botoncito" id="btn_culturales"></div>
+                <div class="edificio" id="tx_culturales">Edificio de Actividades Culturales</div>
+
+                <div class="botoncito" id="btn_ingenieria"></div>
+                <div class="edificio" id="tx_ingenieria">Edificio de Desarrollo Profesional Específico</div>
+
+                <div class="botoncito" id="btn_pesados"></div>
+                <div class="edificio" id="tx_pesados">Edificio de Competencias Integrales e Institucionales</div>
+
+                <div class="botoncito" id="btn_gimnasio"></div>
+                <div class="edificio" id="tx_gimnasio">Edificio de Gimnasio</div>
+
+                <div class="botoncito" id="btn_espejos"></div>
+                <div class="edificio" id="tx_espejos">Edificio de los Espejos</div>
+            </div>
+        </div>
+    <!-- 1. Cargamos jQuery desde internet -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 2. Código interactivo (script.js) -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
