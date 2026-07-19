@@ -1,24 +1,28 @@
+<!doctype html>
 <!-- 
   ======================================================
   PROYECTO: Mapa Interactivo de UPIICSA
   AUTOR: Kit
   FECHA: 17 / 07 / 2026
   DESCRIPCIÓN: Sistema de información y mapa del portal.
-  VERSIÓN: v1.0
+  VERSIÓN: v1.1 — Optimizado (sin jQuery, carga rápida)
   ======================================================
 -->
-<!doctype html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapa interactivo de UPIICSA — Explora edificios, laboratorios, academias y oficinas del campus.">
     <title>Mapa Interactivo UPIICSA</title>
     <!-- Icono de la pestaña (Favicon) -->
     <link rel="icon" type="image/png" href="img/icono/favicon.png">
-    <!-- Google Fonts para tipografía premium -->
+    <!-- Google Fonts — preconnect para carga rápida -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Aquí enlazamos el archivo de los estilos -->
-    <link type="text/css" rel="stylesheet" href="css/estilazo.css">
+    <!-- Estilos del mapa -->
+    <link rel="stylesheet" href="css/estilazo.css">
 </head>
 
 <body>
@@ -506,11 +510,10 @@
                 <div class="edificio" id="tx_espejos">Edificio de los Espejos</div>
             </div>
         </div>
-    <!-- 1. Cargamos jQuery desde internet -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </div>
 
-    <!-- 2. Código interactivo (script.js) -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <!-- Código interactivo (vanilla JS, sin dependencias) -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

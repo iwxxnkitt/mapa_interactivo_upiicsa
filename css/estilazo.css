@@ -7,20 +7,20 @@
    1. GLOBAL STYLES & FONTS
    ========================================================================== */
 body {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #f7f5f7 0%, #ebe6ea 100%);
     margin: 0;
     padding: 20px 15px 40px 15px;
     min-height: 100vh;
     color: #333333;
-    font-size: 16px !important;
-    line-height: 1.7 !important;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 p, li, a, span, button, td, th, label, input, select, textarea, .instrucciones {
-    font-size: 16px !important;
-    line-height: 1.7 !important;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: inherit;
 }
 
 .page-wrapper {
@@ -156,6 +156,7 @@ p, li, a, span, button, td, th, label, input, select, textarea, .instrucciones {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 4px solid #ffffff;
     background-color: #ffffff;
+    contain: layout style;
 }
 
 #mapa {
@@ -178,8 +179,11 @@ p, li, a, span, button, td, th, label, input, select, textarea, .instrucciones {
     cursor: pointer;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
     animation: pulso 2s infinite;
+    will-change: transform;
 }
 
 /* Hover en el botón */
@@ -229,18 +233,28 @@ p, li, a, span, button, td, th, label, input, select, textarea, .instrucciones {
 }
 
 /* Ventanas adaptadas para renderizar como tarjetas relativas en el sidebar */
+/* CRÍTICO: display:none por defecto evita el flash de contenido visible */
 .ventana {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    background-color: transparent !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    border: none !important;
+    display: none;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    border: none;
     z-index: 5;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Estado visible con animación CSS */
+.ventana.visible {
+    display: block;
+    opacity: 1;
 }
 
 /* Botón de cerrar de las ventanas (regresa al placeholder) */
